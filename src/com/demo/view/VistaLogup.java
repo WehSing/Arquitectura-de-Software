@@ -190,6 +190,9 @@ public class VistaLogup extends javax.swing.JFrame {
         }catch(IOException ex)  {
             Logger.getLogger(VistaLogup.class.getName()).log(Level.SEVERE, null, ex);
         }
+        VistaLogin login = new VistaLogin();
+        login.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
