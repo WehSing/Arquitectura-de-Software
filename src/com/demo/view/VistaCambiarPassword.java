@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.demo.view;
 import com.demo.controller.ControllerCambiarPassword;
 import javax.swing.JOptionPane;
-/**
- *
- * @author sergio
- */
+
 public class VistaCambiarPassword extends javax.swing.JFrame {
     ControllerCambiarPassword cPassword;
     /**

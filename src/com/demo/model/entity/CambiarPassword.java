@@ -1,9 +1,5 @@
 package com.demo.model.entity;
 
-/**
- *
- * @author sergio
- */
 public class CambiarPassword {
     private long id;
     private String email;

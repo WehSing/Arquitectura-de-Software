@@ -1,6 +1,5 @@
 package com.demo.model.entity;
 
-
 public class NewUsuario {
     private long id;
     private String email;

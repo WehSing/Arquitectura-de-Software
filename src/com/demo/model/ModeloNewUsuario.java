@@ -1,10 +1,7 @@
 
 package com.demo.model;
 import com.demo.model.entity.NewUsuario;
-/**
- *
- * @author sergio
- */
+
 public class ModeloNewUsuario {
     static public boolean logUp(NewUsuario userup)   {
         boolean band2=false;
