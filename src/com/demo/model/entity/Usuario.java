@@ -8,17 +8,19 @@ public class Usuario {
     private String apellidos;
     private String nombres;
     private int tipo;
+    private String cod;
     
     public Usuario() {
     }
     
-    public Usuario(long id, String email, String clave, String apellidos, String nombres, int tipo) {
+    public Usuario(long id,String cod, String email, String clave, String apellidos, String nombres, int tipo) {
         this.id = id;
         this.email = email;
         this.clave = clave;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.tipo = tipo;
+        this.cod= cod;
         
     }
 
@@ -27,7 +29,12 @@ public class Usuario {
         this.clave = clave;
     }
     
-
+    public String getCod()  {
+        return cod;
+    }
+    public void setCod(String cod)    {
+        this.cod=cod;
+    }
     public long getId() {
         return id;
     }

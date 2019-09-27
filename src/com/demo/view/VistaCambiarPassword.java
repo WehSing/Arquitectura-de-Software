@@ -10,7 +10,7 @@ public class VistaCambiarPassword extends javax.swing.JFrame {
     public VistaCambiarPassword() {
         this.setLocationRelativeTo(null);
         initComponents();
-        cPassword = new ControllerCambiarPassword();
+//        cPassword = new ControllerCambiarPassword();
     }
 
     /**
@@ -123,16 +123,16 @@ public class VistaCambiarPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCregistrarActionPerformed
 
     private void btnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarActionPerformed
-        String password,password2;
-        password=this.txtCregistrar.getText();
-        password2=this.txtCregistrar2.getText();
-        boolean band3;
-        band3=this.cPassword.cambiarpass(password, password2);
-        if(band3){  
-            JOptionPane.showMessageDialog(this, "Cambio Completo");
-        }else       {
-            JOptionPane.showMessageDialog(this, "Cambio Incorrecto");
-        }
+//        String password,password2;
+//        password=this.txtCregistrar.getText();
+//        password2=this.txtCregistrar2.getText();
+//        boolean band3;
+//        band3=this.cPassword.cambiarpass(password, password2);
+//        if(band3){  
+//            JOptionPane.showMessageDialog(this, "Cambio Completo");
+//        }else       {
+//            JOptionPane.showMessageDialog(this, "Cambio Incorrecto");
+//        }
         
     }//GEN-LAST:event_btnCambiarActionPerformed
 
@@ -173,13 +173,13 @@ public class VistaCambiarPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCambiar;
+    public javax.swing.JButton btnCambiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCregistrar;
-    private javax.swing.JTextField txtCregistrar2;
-    private javax.swing.JTextField txtUregistrar;
+    public javax.swing.JTextField txtCregistrar;
+    public javax.swing.JTextField txtCregistrar2;
+    public javax.swing.JTextField txtUregistrar;
     // End of variables declaration//GEN-END:variables
 }

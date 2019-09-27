@@ -182,13 +182,13 @@ public class VistaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JtxtUsuario;
-    private javax.swing.JButton jBtnLogin;
-    private javax.swing.JButton jBtnLogup;
-    private javax.swing.JButton jBtnRecuperar;
+    public javax.swing.JTextField JtxtUsuario;
+    public javax.swing.JButton jBtnLogin;
+    public javax.swing.JButton jBtnLogup;
+    public javax.swing.JButton jBtnRecuperar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTxtClave;
+    public javax.swing.JTextField jTxtClave;
     // End of variables declaration//GEN-END:variables
 }
