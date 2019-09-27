@@ -9,21 +9,23 @@ public class Usuario {
     private String apellidos;
     private String nombres;
     private int tipo;
-    
+    private String[] usuarios=null;
     public Usuario() {
     }
     
-    public Usuario(long id, String email, String clave, String apellidos, String nombres, int tipo) {
+    public Usuario(long id, String email, String clave, String apellidos, String nombres, int tipo,String usuarios[]) {
         this.id = id;
         this.email = email;
         this.clave = clave;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.tipo = tipo;
+        this.usuarios=usuarios;
         
     }
 
-    public Usuario(String email, String clave) {
+    public Usuario(String usuarios[],String email, String clave) {
+        this.usuarios=usuarios;
         this.email = email;
         this.clave = clave;
     }
@@ -36,7 +38,12 @@ public class Usuario {
     public void setId(long id) {
         this.id = id;
     }
-
+    public String[] getUsuarios() {
+        return usuarios;
+    }
+    public void setUsuarios(String[] usuarios)    {
+        this.usuarios=usuarios;
+    }
     public String getEmail() {
         return email;
     }

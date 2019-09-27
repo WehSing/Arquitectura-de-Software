@@ -1,11 +1,20 @@
 package com.demo.view;
 
 import com.demo.controller.ControllerLogin;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class VistaLogin extends javax.swing.JFrame {
-
-    ControllerLogin cLogin;
+private static Scanner sc;
+private static String user, password;
+//    ControllerLogin cLogin;
     
     /**
      * Creates new form VistaLogin
@@ -13,7 +22,8 @@ public class VistaLogin extends javax.swing.JFrame {
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
-        cLogin = new ControllerLogin();
+        rootPane.setDefaultButton(jBtnLogin);
+//        cLogin = new ControllerLogin();
     }
 
     /**
@@ -115,22 +125,63 @@ public class VistaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
+        
+        FileReader fr=null;
+    try {
         // TODO add your handling code here:
-        String usuario, clave;
-        usuario = this.JtxtUsuario.getText();
-        clave = this.jTxtClave.getText();
+//        String usuario, clave;
+//        usuario = this.JtxtUsuario.getText();
+//        clave = this.jTxtClave.getText();
+//        
+//        boolean band;
+//        
+//        band = this.cLogin.logIn(usuario, clave);
+//        
+//        if(band){
+//            //login Correcto
+//            JOptionPane.showMessageDialog(this, "Login Valida");
+//        }else{
+//            //login incorrecto
+//            JOptionPane.showMessageDialog(this, "Login Invalido");
+//        }
         
-        boolean band;
-        
-        band = this.cLogin.logIn(usuario, clave);
-        
-        if(band){
-            //login Correcto
-            JOptionPane.showMessageDialog(this, "Login Valida");
-        }else{
-            //login incorrecto
-            JOptionPane.showMessageDialog(this, "Login Invalido");
+        int nLineas=0;
+        int i=0;
+        String[]usuarios=null;
+        String linea;
+        sc=new Scanner(new File("D:\\usuarios.txt"));
+        File file= new File("D:\\usuarios.txt");
+        fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+    
+            try {
+                while((linea=br.readLine())!= null)    {
+                    nLineas++;
+                }   } catch (IOException ex) {
+                Logger.getLogger(VistaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            usuarios=new String[nLineas];       
+            while(sc.hasNextLine()) {
+                usuarios[i++]=sc.nextLine();
+            }
+            
+            user=JtxtUsuario.getText();
+            password=jTxtClave.getText();
+            ControllerLogin login = new ControllerLogin();
+            login.validarUsuario(usuarios, user, password);
+    
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(VistaLogin.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        try {
+            fr.close();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+        
+        
         
     }//GEN-LAST:event_jBtnLoginActionPerformed
 
