@@ -5,6 +5,12 @@
  */
 package com.demo.view;
 import com.demo.controller.ControllerLogup;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -157,15 +163,32 @@ public class VistaLogup extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        String claveup,claveup2;
-        claveup=this.txtPassword.getText();
-        claveup2=this.txtPassword2.getText();
-        boolean band2;
-        band2=this.clogup.logUp(claveup, claveup2);
-        if(band2)   {
-            JOptionPane.showMessageDialog(this,"Registro correcto");
-        }else   {
-            JOptionPane.showMessageDialog(this, "Registro incorrecto compruebe la contraseña");
+//        String claveup,claveup2;
+//        claveup=this.txtPassword.getText();
+//        claveup2=this.txtPassword2.getText();
+//        boolean band2;
+//        band2=this.clogup.logUp(claveup, claveup2);
+//        if(band2)   {
+//            JOptionPane.showMessageDialog(this,"Registro correcto");
+//        }else   {
+//            JOptionPane.showMessageDialog(this, "Registro incorrecto compruebe la contraseña");
+//        }
+        File archivo;
+        FileWriter agregar;
+        PrintWriter linea;
+        String email="" ,password="";
+        archivo=new File("D:\\usuarios.txt");
+        try     {
+            email=this.txtUsuario.getText();
+            password=this.txtPassword.getText();
+            agregar=new FileWriter(archivo,true);
+            linea=new PrintWriter(agregar);
+            linea.println(email);
+            linea.println(password);
+            linea.close();
+            agregar.close();
+        }catch(IOException ex)  {
+            Logger.getLogger(VistaLogup.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
