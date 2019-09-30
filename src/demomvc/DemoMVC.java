@@ -1,25 +1,28 @@
 
 package demomvc;
 
-import com.demo.controller.ControllerUsuarios;
+import com.demo.controller.ControllerLogin;
+import com.demo.controller.ControllerLogup;
 import com.demo.model.ModeloUsuarios;
-import com.demo.model.entity.Usuario;
-import com.demo.view.VistaCambiarPassword;
 import com.demo.view.VistaLogin;
 import com.demo.view.VistaLogup;
+
+
+
 
 public class DemoMVC {
 
    
     public static void main(String[] args) {
-        Usuario mod = new Usuario();
-        ModeloUsuarios modC=new ModeloUsuarios();
-        VistaLogin frm=new VistaLogin();
-        VistaLogup frm2=new VistaLogup();
-        VistaCambiarPassword frm3=new VistaCambiarPassword();
-        ControllerUsuarios ctrl= new ControllerUsuarios(mod,modC,frm,frm2,frm3);
-        ctrl.iniciar();
-        frm.setVisible(true);
+     VistaLogin vistalog=new VistaLogin();
+     ModeloUsuarios modelusuarios=new ModeloUsuarios();
+     ControllerLogin controlog=new ControllerLogin(vistalog,modelusuarios);
+     vistalog.setVisible(true);
+     vistalog.setLocationRelativeTo(null);
+     VistaLogup vistalogup=new VistaLogup();   
+     ControllerLogup controlup=new ControllerLogup(vistalogup,modelusuarios);
+     vistalogup.setVisible(true);
+     vistalogup.setLocationRelativeTo(null);
     }
     
 }

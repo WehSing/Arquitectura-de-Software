@@ -11,7 +11,7 @@ public class VistaLogin extends javax.swing.JFrame {
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
-        cLogin = new ControllerLogin();
+        
     }
 
     /**
@@ -114,36 +114,36 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
         // TODO add your handling code here:
-        String usuario, clave;
-        usuario = this.JtxtUsuario.getText();
-        clave = this.jTxtClave.getText();
-        
-        boolean band;
-        
-        band = this.cLogin.logIn(usuario, clave);
-        
-        if(band){
-            //login Correcto
-            JOptionPane.showMessageDialog(this, "Login Valida");
-        }else{
-            //login incorrecto
-            JOptionPane.showMessageDialog(this, "Login Invalido");
-        }
-        
+//        String usuario, clave;
+//        usuario = this.JtxtUsuario.getText();
+//        clave = this.jTxtClave.getText();
+//        
+//        boolean band;
+//        
+//        band = this.cLogin.logIn(usuario, clave);
+//        
+//        if(band){
+//            //login Correcto
+//            JOptionPane.showMessageDialog(this, "Login Valida");
+//        }else{
+//            //login incorrecto
+//            JOptionPane.showMessageDialog(this, "Login Invalido");
+//        }
+//        
     }//GEN-LAST:event_jBtnLoginActionPerformed
 
     private void jBtnLogupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLogupActionPerformed
-        VistaLogup logup = new VistaLogup();
-        logup.setVisible(true);
-        dispose();
+//        VistaLogup logup = new VistaLogup();
+//        logup.setVisible(true);
+//        dispose();
         
         
     }//GEN-LAST:event_jBtnLogupActionPerformed
 
     private void jBtnRecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRecuperarActionPerformed
-        VistaCambiarPassword cambiarp=new VistaCambiarPassword();
-        cambiarp.setVisible(true);
-        dispose();
+//        VistaCambiarPassword cambiarp=new VistaCambiarPassword();
+//        cambiarp.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jBtnRecuperarActionPerformed
 
     /**
